@@ -1,0 +1,13 @@
+--- units-1.80/Makefile.in~	Tue Apr 29 11:24:25 2003
++++ units-1.80/Makefile.in	Tue Apr 29 11:24:25 2003
+@@ -91,8 +91,8 @@
+ OBJECTS = units$o
+ $(OBJECTS): $(ANSI2KNR)
+ 
+-units: $(OBJECTS) parse.tab.o getopt.o getopt1.o @STRFUNC@
+-	$(CC) $(LDFLAGS) -o units $(OBJECTS) parse.tab.o getopt.o getopt1.o @STRFUNC@ $(LIBS)
++units: $(OBJECTS) parse.tab.o @STRFUNC@
++	$(CC) $(LDFLAGS) -o units $(OBJECTS) parse.tab.o @STRFUNC@ $(LIBS)
+ 
+ install: units units.dat install-doc
+ 	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(datadir)
