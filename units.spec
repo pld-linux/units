@@ -4,7 +4,7 @@ Summary(fr):	Programme de conversion d'unités
 Summary(tr):	Birim dönüþtürme programý
 Name:		units
 Version:	1.55
-Release:	11
+Release:	12
 License:	GPL
 Group:		Applications/Engineering
 Group(de):	Applikationen/Ingenieurwesen
@@ -61,6 +61,12 @@ gzip -9nf NEWS README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+
+%postun
+[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
 %files
 %defattr(644,root,root,755)
