@@ -4,17 +4,19 @@ Summary(es):	Programas de conversiСn de unidades
 Summary(fr):	Programme de conversion d'unitИs
 Summary(pl):	NarzЙdzie do konwersji warto╤ci miЙdzy jednostkami
 Summary(pt_BR):	Programas de conversЦo de unidades
+Summary(ru):	Утилита преобразования единиц измерения
 Summary(tr):	Birim dЖnЭЧtЭrme programЩ
+Summary(uk):	Утил╕та для конвертац╕╖ одиниць вим╕ру
 Name:		units
-Version:	1.74
-Release:	1
+Version:	1.80
+Release:	5
 License:	GPL
 Group:		Applications/Engineering
 Source0:	ftp://ftp.gnu.org/pub/gnu/units/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-DESTDIR.patch
 Patch2:		%{name}-FHS.patch
-Patch3:		%{name}-use_sys_geopt.patch
+Patch3:		%{name}-use_sys_getopt.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	readline-devel >= 4.2
@@ -59,9 +61,32 @@ O programa units converte expressУes de quantidade em vАrias escalas
 para seus equivalentes em outras escalas. Ele somente pode manipular
 mudanГas multiplicativas de escala.
 
+%description -l ru
+Программа units преобразовывает количественные выражения между
+различными системами мер или рассказывает какие математические
+операции необходимы для такого преобразования. Эта программа может
+обрабатывать только мультипликативные изменения мер (например, она не
+может рассказать как конвертировать градусы Цельсия в градусы
+Фаренгейта, так как эта конвертация требует суммирования дополнительно
+к мультипликативному преобразованию).
+
+Чаще всего нет необходимости устанавливать эту программу, но иногда
+она может оказаться полезной.
+
 %description -l tr
 units programЩ, ГeЧitli birimlerdeki bЭyЭklЭkleri baЧka birimlere
 Гevirir.
+
+%description -l uk
+Програма units перетворю╓ к╕льк╕сн╕ вирази м╕ж р╕зними системами м╕р
+або розпов╕да╓ як╕ математичн╕ операц╕╖ потр╕бн╕ для такого
+перетворення. Ця програма може обробляти лише мультипл╕кативн╕ зм╕ни
+м╕р (наприклад, вона не може розпов╕сти як конвертувати градуси
+Цельс╕я в градуси Фаренгейта, бо ця конвертац╕я потребу╓ додавання
+додатково до мультипл╕кативного перетворення).
+
+Як правило необх╕дност╕ встановлювати цю програму нема╓, але ╕нод╕
+вона ста╓ на пригод╕.
 
 %prep
 %setup -q
