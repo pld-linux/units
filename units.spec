@@ -28,7 +28,7 @@ zcat $RPM_SOURCE_DIR/part01.gz | tail -1683 | sh
 %patch1 -p1
 
 %build
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
