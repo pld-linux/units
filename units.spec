@@ -10,8 +10,6 @@ Version:	1.74
 Release:	1
 License:	GPL
 Group:		Applications/Engineering
-Group(de):	Applikationen/Ingenieurwesen
-Group(pl):	Aplikacje/In¿ynierskie
 Source0:	ftp://ftp.gnu.org/pub/gnu/units/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-DESTDIR.patch
