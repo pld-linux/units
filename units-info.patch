@@ -1,0 +1,17 @@
+diff -Nru units-1.55/units.texinfo units-1.55.new/units.texinfo
+--- units-1.55/units.texinfo	Fri Jul 30 23:27:52 1999
++++ units-1.55.new/units.texinfo	Wed Jul 26 21:12:24 2000
+@@ -14,9 +14,10 @@
+ @c noman
+ @ifinfo
+ @format
+-START-INFO-DIR-ENTRY
+-* units: (units).	Units conversion.
+-END-INFO-DIR-ENTRY
++@dircategory Miscellaneous:
++@direntry
++* units: (units).			Units conversion
++@end direntry
+ @end format
+ @end ifinfo
+ 
