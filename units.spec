@@ -22,6 +22,7 @@ Patch4:		%{name}-comment_strange_c_code.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	readline-devel >= 4.2
+BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
