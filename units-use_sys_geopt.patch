@@ -1,0 +1,11 @@
+--- units-1.74/Makefile.in~	Fri Sep  7 11:58:03 2001
++++ units-1.74/Makefile.in	Fri Sep  7 11:59:26 2001
+@@ -51,7 +51,7 @@
+ COMPILE = $(CC) $(ALL_CFLAGS) $(LDFLAGS)
+ 
+ DISTFILES = README ChangeLog units.info units.doc getopt1.c units.dvi \
+-   Makefile.in units.c getopt.c getopt.h units.dat units.man units.texinfo \
++   Makefile.in units.c units.dat units.man units.texinfo \
+    configure.in configure strfunc.c COPYING Makefile.dos install-sh \
+    mkinstalldirs NEWS ansi2knr.1 ansi2knr.c aclocal.m4 texi2man INSTALL \
+    parse.tab.c parse.y units.h
