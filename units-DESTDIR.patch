@@ -1,0 +1,80 @@
+diff -Nru units-1.55/Makefile.in units-1.55.new/Makefile.in
+--- units-1.55/Makefile.in	Wed Jul 26 22:58:26 2000
++++ units-1.55.new/Makefile.in	Wed Jul 26 22:59:13 2000
+@@ -91,44 +91,40 @@
+ 	$(CC) $(LDFLAGS) -o units $(OBJECTS) getopt.o getopt1.o @STRFUNC@ $(LIBS)
+ 
+ install: units units.dat install-doc
+-	$(srcdir)/mkinstalldirs $(bindir) $(datadir)
+-	$(INSTALL_PROGRAM) units $(bindir)/`echo units|sed '$(transform)'`
+-	$(INSTALL_DATA) $(srcdir)/units.dat $(datadir)units.dat
++	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(datadir)
++	$(INSTALL_PROGRAM) units $(DESTDIR)$(bindir)/`echo units|sed '$(transform)'`
++	$(INSTALL_DATA) $(srcdir)/units.dat $(DESTDIR)$(datadir)/units.dat
+ 
+ install-strip: units units.dat install-doc
+-	$(INSTALL_PROGRAM) -s units $(bindir)/`echo units|sed '$(transform)'`
+-	$(INSTALL_DATA) $(srcdir)/units.dat $(datadir)units.dat
++	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(datadir)
++	$(INSTALL_PROGRAM) -s units $(DESTDIR)$(bindir)/`echo units|sed '$(transform)'`
++	$(INSTALL_DATA) $(srcdir)/units.dat $(DESTDIR)$(datadir)/units.dat
+ 
+ install-doc: install-man install-info
+ 
+ install-man: units.1
+-	$(srcdir)/mkinstalldirs $(mandir)/man1
+-	$(INSTALL_DATA) units.1 $(mandir)/man1/`echo units|sed '$(transform)'`.1
++	$(srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
++	$(INSTALL_DATA) units.1 $(DESTDIR)$(mandir)/man1/`echo units|sed '$(transform)'`.1
+ 
+-units.man: units.texinfo texi2man
+-	./texi2man units.texinfo > units.man
+-
+-units.1: units.man
++units.1:
+ 	sed s!@DATAFILE@!$(datadir)units.dat! $(srcdir)/units.man > units.1
+ 
+-install-info: $(infodir)/units.info
+-
+-$(infodir)/units.info: units.info
+-	$(srcdir)/mkinstalldirs $(infodir)
++install-info: units.info
++	$(srcdir)/mkinstalldirs $(DESTDIR)$(infodir)
+ # There may be a newer info file in . than in srcdir.
+ 	-if test -f units.info; then d=.; \
+ 	   else d=$(srcdir); fi; \
+-	$(INSTALL_DATA) $$d/units.info $@; \
++	$(INSTALL_DATA) $$d/units.info $(DESTDIR)$(infodir); \
+ # Run install-info only if it exists.
+ # Use `if' instead of just prepending `-' to the
+ # line so we notice real errors from install-info.
+ # We use `$(SHELL) -c' because some shells do not
+ # fail gracefully when there is an unknown command.
+-	if test -f $(infodir)/dir; then \
++	if test -f $(DESTDIR)$(infodir)/dir; then \
+ 	  if $(SHELL) -c 'install-info --version' \
+ 	     >/dev/null 2>&1; then \
+-	     install-info --dir-file=$(infodir)/dir \
+-	               $(infodir)/units.info; \
++	     install-info --dir-file=$(DESTDIR)$(infodir)/dir \
++	               $(DESTDIR)$(infodir)/units.info; \
+ 	  else true; fi \
+ 	else true; fi
+ 
+@@ -136,11 +132,11 @@
+ 	./config.status
+ 
+ uninstall: 
+-	-rm -f $(bindir)/`echo units|sed '$(transform)'` \
+-	       $(mandir)/man1/`echo units|sed '$(transform)'`.1 \
+-	       $(infodir)/units.info $(datadir)units.dat
+-	@if test -f $(infodir)/dir; then \
+-	  echo You may need to remove units.info from $(infodir)/dir; \
++	-rm -f $(DESTDIR)$(bindir)/`echo units|sed '$(transform)'` \
++	       $(DESTDIR)$(mandir)/man1/`echo units|sed '$(transform)'`.1 \
++	       $(DESTDIR)$(infodir)/units.info $(DESTDIR)$(datadir)units.dat
++	@if test -f $(DESTDIR)$(infodir)/dir; then \
++	  echo You may need to remove units.info from $(DESTDIR)$(infodir)/dir; \
+ 	else true; fi
+ 
+ clean mostlyclean: 
