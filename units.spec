@@ -7,7 +7,7 @@ Patch0:		units-1.0-makefile.patch
 Patch1:		units-1.0-jbj.patch
 Copyright:	freely distributable
 Group:		Applications/Engineering
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Units converts an amount from one unit to another, or tells you what
