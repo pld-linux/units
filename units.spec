@@ -1,13 +1,13 @@
-Summary: A utility for converting amounts from one unit to another.
-Name: units
-Version: 1.0
-Release: 12
-Source: ftp://lth.se/pub/usenet/comp.sources.misc/volume38/units/part01.gz
-Patch0: units-1.0-makefile.patch
-Patch1: units-1.0-jbj.patch
-Copyright: freely distributable
-Group: Applications/Engineering
-BuildRoot: /var/tmp/units-root
+Summary:	A utility for converting amounts from one unit to another.
+Name:		units
+Version:	1.0
+Release:	12
+Source:		ftp://lth.se/pub/usenet/comp.sources.misc/volume38/units/part01.gz
+Patch0:		units-1.0-makefile.patch
+Patch1:		units-1.0-jbj.patch
+Copyright:	freely distributable
+Group:		Applications/Engineering
+BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
 Units converts an amount from one unit to another, or tells you what
@@ -32,39 +32,19 @@ make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/usr/{bin,lib,man/man1}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_libdir},%{_mandir}/man1}
 
-install -s -m 755 units $RPM_BUILD_ROOT/usr/bin
-install -m 644 units.lib $RPM_BUILD_ROOT/usr/lib
-install -m 644 units.1 $RPM_BUILD_ROOT/usr/man/man1
+install -s units $RPM_BUILD_ROOT%{_bindir}
+install units.lib $RPM_BUILD_ROOT%{_libdir}
+install units.1 $RPM_BUILD_ROOT%{_mandir}/man1
+
+gzip -9nf  $RPM_BUILD_ROOT%{_mandir}/man1/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(-,root,root)
-/usr/bin/units
-/usr/lib/units.lib
-/usr/man/man1/units.1
-
-%changelog
-* Sun Mar 21 1999 Cristian Gafton <gafton@redhat.com> 
-- auto rebuild in the new build environment (release 12)
-
-* Thu Dec 17 1998 Michael Maher <mike@redhat.com>
-- built package for 6.0
-
-* Sun Aug 23 1998 Jeff Johnson <jbj@redhat.com>
-- units.lib corrections (problem #685)
-
-* Tue Aug 11 1998 Jeff Johnson <jbj@redhat.com>
-- build root
-
-* Mon Apr 27 1998 Prospector System <bugs@redhat.com>
-- translations modified for de, fr, tr
-
-* Tue Oct 21 1997 Donnie Barnes <djb@redhat.com>
-- spec file cleanups
-
-* Mon Jul 21 1997 Erik Troan <ewt@redhat.com>
-- built against glibc
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/units
+%{_libdir}/units.lib
+%{_mandir}/man1/units.1.gz
