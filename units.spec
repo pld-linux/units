@@ -48,8 +48,8 @@ systèmes en leur équivalents sous d'autres systèmes. Il ne peut gérer
 que les changements multiplicatifs de systèmes.
 
 %description -l pl
-Program units przelicza warto¶ci z jednej jednostki na inn±, albo
-mówi jakie operacje matematyczne trzeba przeprowadziæ, aby przeliczyæ
+Program units przelicza warto¶ci z jednej jednostki na inn±, albo mówi
+jakie operacje matematyczne trzeba przeprowadziæ, aby przeliczyæ
 miêdzy jednostkami. Narzêdzie to mo¿e obs³u¿yæ tylko konwersje
 multiplikatywne (tzn. nie mo¿e powiedzieæ jak przeliczyæ ze stopni
 Celsjusza na Fahrenheita, co wymaga dodawania oprócz mno¿enia).
