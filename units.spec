@@ -45,7 +45,6 @@ units programý, çeþitli birimlerdeki büyüklükleri baþka birimlere
 %patch1 -p1
 
 %build
-LDFLAGS="-s"; export LDFLAGS
 aclocal
 autoconf
 %configure
@@ -56,8 +55,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf $RPM_BUILD_ROOT{%{_mandir}/man1/*,%{_infodir}/*} \
-	NEWS README
+gzip -9nf NEWS README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
