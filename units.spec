@@ -4,13 +4,15 @@ Summary(fr):	Programme de conversion d'unités
 Summary(tr):	Birim dönüþtürme programý
 Name:		units
 Version:	1.55
-Release:	10
+Release:	11
 License:	GPL
 Group:		Applications/Engineering
+Group(de):	Applikationen/Ingenieurwesen
 Group(pl):	Aplikacje/In¿ynierskie
 Source0:	ftp://ftp.gnu.org/pub/gnu/units/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-DESTDIR.patch
+BuildRequires:	readline-devel >= 4.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
