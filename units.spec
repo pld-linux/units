@@ -71,7 +71,7 @@ units programý, çeþitli birimlerdeki büyüklükleri baþka birimlere
 %patch3 -p1
 
 %build
-aclocal
+%{__aclocal}
 %{__autoconf}
 %configure
 %{__make}
