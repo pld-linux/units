@@ -18,6 +18,7 @@ Patch0:		%{name}-info.patch
 Patch1:		%{name}-DESTDIR.patch
 Patch2:		%{name}-FHS.patch
 Patch3:		%{name}-use_sys_getopt.patch
+Patch4:		%{name}-comment_strange_c_code.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	readline-devel >= 4.2
@@ -95,6 +96,7 @@ units programý, çeþitli birimlerdeki büyüklükleri baþka birimlere
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
+%patch4 -p0
 
 %build
 %{__aclocal}
