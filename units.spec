@@ -2,6 +2,7 @@ Summary:	A utility for converting amounts from one unit to another
 Summary(de):	Einheitenkonvertierungsprogramm
 Summary(es):	Programas de conversión de unidades
 Summary(fr):	Programme de conversion d'unités
+Summary(pl):	Narzêdzie do konwersji warto¶ci miêdzy jednostkami
 Summary(pt_BR):	Programas de conversão de unidades
 Summary(tr):	Birim dönüþtürme programý
 Name:		units
@@ -16,6 +17,8 @@ Patch0:		%{name}-info.patch
 Patch1:		%{name}-DESTDIR.patch
 Patch2:		%{name}-FHS.patch
 Patch3:		%{name}-use_sys_geopt.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	readline-devel >= 4.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -45,6 +48,13 @@ cambios multiplicativos de escala.
 Le programme units convertit des quantités exprimées en différents
 systèmes en leur équivalents sous d'autres systèmes. Il ne peut gérer
 que les changements multiplicatifs de systèmes.
+
+%description -l pl
+Program units przelicza warto¶ci z jednej jednostki na inn±, albo
+mówi jakie operacje matematyczne trzeba przeprowadziæ, aby przeliczyæ
+miêdzy jednostkami. Narzêdzie to mo¿e obs³u¿yæ tylko konwersje
+multiplikatywne (tzn. nie mo¿e powiedzieæ jak przeliczyæ ze stopni
+Celsjusza na Fahrenheita, co wymaga dodawania oprócz mno¿enia).
 
 %description -l pt_BR
 O programa units converte expressões de quantidade em várias escalas
