@@ -1,10 +1,12 @@
 Summary:	A utility for converting amounts from one unit to another
 Summary(de):	Einheitenkonvertierungsprogramm
+Summary(es):	Programas de conversión de unidades
 Summary(fr):	Programme de conversion d'unités
+Summary(pt_BR):	Programas de conversão de unidades
 Summary(tr):	Birim dönüþtürme programý
 Name:		units
-Version:	1.55
-Release:	12
+Version:	1.74
+Release:	1
 License:	GPL
 Group:		Applications/Engineering
 Group(de):	Applikationen/Ingenieurwesen
@@ -12,6 +14,8 @@ Group(pl):	Aplikacje/In¿ynierskie
 Source0:	ftp://ftp.gnu.org/pub/gnu/units/%{name}-%{version}.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-DESTDIR.patch
+Patch2:		%{name}-FHS.patch
+Patch3:		%{name}-use_sys_geopt.patch
 BuildRequires:	readline-devel >= 4.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -32,10 +36,20 @@ Das Programm 'units' konvertiert Mengenausdrücke in verschiedenen
 Maßstäben in die entsprechenden Werte des anderen Maßstabs um. Das
 Programm kann nur multiplikative Maßstabsänderungen verarbeiten.
 
+%description -l es
+El programa units convierte expresiones de cantidad en varias escalas
+para sus equivalentes en otras escalas. Solamente puede manipular
+cambios multiplicativos de escala.
+
 %description -l fr
 Le programme units convertit des quantités exprimées en différents
 systèmes en leur équivalents sous d'autres systèmes. Il ne peut gérer
 que les changements multiplicatifs de systèmes.
+
+%description -l pt_BR
+O programa units converte expressões de quantidade em várias escalas
+para seus equivalentes em outras escalas. Ele somente pode manipular
+mudanças multiplicativas de escala.
 
 %description -l tr
 units programý, çeþitli birimlerdeki büyüklükleri baþka birimlere
@@ -45,6 +59,8 @@ units programý, çeþitli birimlerdeki büyüklükleri baþka birimlere
 %setup -q
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
+%patch3 -p1
 
 %build
 aclocal
@@ -72,6 +88,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc *.gz
 %attr(755,root,root) %{_bindir}/units
-%{_datadir}/units.dat
+%{_datadir}/misc/units.dat
 %{_mandir}/man1/*
 %{_infodir}/*info*
