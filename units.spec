@@ -13,6 +13,7 @@ Release:	5
 License:	GPL
 Group:		Applications/Engineering
 Source0:	ftp://ftp.gnu.org/pub/gnu/units/%{name}-%{version}.tar.gz
+# Source0-md5:	537f0e1fadc7715e1eb15c9aa33c8c64
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-DESTDIR.patch
 Patch2:		%{name}-FHS.patch
