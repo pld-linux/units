@@ -1,0 +1,69 @@
+diff -Nru units-1.74/Makefile.in units-1.74.new/Makefile.in
+--- units-1.74/Makefile.in	Fri Sep  7 11:53:41 2001
++++ units-1.74.new/Makefile.in	Fri Sep  7 11:55:12 2001
+@@ -44,10 +44,8 @@
+ 
+ transform=@program_transform_name@
+ 
+-# datadir must end with a / or be empty
+ datadir = @datadir@
+-#datadir =
+-DEFS = -DUNITSFILE=\"$(datadir)units.dat\" @DEFIS@ @DEFS@
++DEFS = -DUNITSFILE=\"$(datadir)/misc/units.dat\" @DEFIS@ @DEFS@
+ CFLAGS = @CFLAGS@
+ ALL_CFLAGS = $(DEFS) $(CFLAGS) -I$(srcdir)
+ COMPILE = $(CC) $(ALL_CFLAGS) $(LDFLAGS)
+@@ -97,14 +95,14 @@
+ 	$(CC) $(LDFLAGS) -o units $(OBJECTS) parse.tab.o getopt.o getopt1.o @STRFUNC@ $(LIBS)
+ 
+ install: units units.dat install-doc
+-	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(datadir)
++	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(datadir)/misc
+ 	$(INSTALL_PROGRAM) units $(DESTDIR)$(bindir)/`echo units|sed '$(transform)'`
+-	$(INSTALL_DATA) $(srcdir)/units.dat $(DESTDIR)$(datadir)/units.dat
++	$(INSTALL_DATA) $(srcdir)/units.dat $(DESTDIR)$(datadir)/misc/units.dat
+ 
+ install-strip: units units.dat install-doc
+-	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(datadir)
++	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(datadir)/misc
+ 	$(INSTALL_PROGRAM) -s units $(DESTDIR)$(bindir)/`echo units|sed '$(transform)'`
+-	$(INSTALL_DATA) $(srcdir)/units.dat $(DESTDIR)$(datadir)/units.dat
++	$(INSTALL_DATA) $(srcdir)/units.dat $(DESTDIR)$(datadir)/misc/units.dat
+ 
+ install-doc: install-man install-info
+ 
+@@ -113,7 +111,7 @@
+ 	$(INSTALL_DATA) units.1 $(DESTDIR)$(mandir)/man1/`echo units|sed '$(transform)'`.1
+ 
+ units.1:
+-	sed s!@DATAFILE@!$(datadir)units.dat! $(srcdir)/units.man > units.1
++	sed s!@DATAFILE@!$(datadir)/musc/units.dat! $(srcdir)/units.man > units.1
+ 
+ install-info: units.info
+ 	$(srcdir)/mkinstalldirs $(DESTDIR)$(infodir)
+@@ -140,7 +138,7 @@
+ uninstall: 
+ 	-rm -f $(DESTDIR)$(bindir)/`echo units|sed '$(transform)'` \
+ 	       $(DESTDIR)$(mandir)/man1/`echo units|sed '$(transform)'`.1 \
+-	       $(DESTDIR)$(infodir)/units.info $(DESTDIR)$(datadir)units.dat
++	       $(DESTDIR)$(infodir)/units.info $(DESTDIR)$(datadir)/misc/units.dat
+ 	@if test -f $(DESTDIR)$(infodir)/dir; then \
+ 	  echo You may need to remove units.info from $(DESTDIR)$(infodir)/dir; \
+ 	else true; fi
+diff -Nru units-1.74/configure.in units-1.74.new/configure.in
+--- units-1.74/configure.in	Mon Aug  2 22:36:50 1999
++++ units-1.74.new/configure.in	Fri Sep  7 11:54:07 2001
+@@ -36,13 +36,5 @@
+ AC_CHECK_FUNC(strspn,[],DEFIS="$DEFIS -DNO_STRSPN";STRFUNC="strfunc.o")
+ AC_CHECK_FUNC(strtok,[],DEFIS="$DEFIS -DNO_STRTOK";STRFUNC="strfunc.o")
+ 
+-if test "$datadir"; then
+-  if echo $datadir|grep '/$'; then
+-    true
+-  else
+-    datadir="$datadir/"
+-  fi
+-fi
+-
+ AC_OUTPUT(Makefile)
+ 
