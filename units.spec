@@ -72,7 +72,7 @@ units programý, çeþitli birimlerdeki büyüklükleri baþka birimlere
 
 %build
 aclocal
-autoconf
+%{__autoconf}
 %configure
 %{__make}
 
