@@ -1,11 +1,16 @@
-Summary:	A utility for converting amounts from one unit to another.
+Summary:	A utility for converting amounts from one unit to another
+Summary(de):	Einheitenkonvertierungsprogramm
+Summary(fr):	Programme de conversion d'unités
+Summary(tr):	Birim dönüþtürme programý
 Name:		units
 Version:	1.55
-Release:	1
-Source0:	ftp://ftp.gnu.org/pub/gnu/units/%{name}-%{version}.tar.gz
+Release:	10
 License:	GPL
 Group:		Applications/Engineering
 Group(pl):	Aplikacje/In¿ynierskie
+Source0:	ftp://ftp.gnu.org/pub/gnu/units/%{name}-%{version}.tar.gz
+Patch0:		%{name}-info.patch
+Patch1:		%{name}-DESTDIR.patch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -20,8 +25,24 @@ Units is a handy little program which contains a large number of
 conversions, from au's to parsecs and tablespoons to cups. You
 probably don't need to install it, but it comes in handy sometimes.
 
+%description -l de
+Das Programm 'units' konvertiert Mengenausdrücke in verschiedenen
+Maßstäben in die entsprechenden Werte des anderen Maßstabs um. Das
+Programm kann nur multiplikative Maßstabsänderungen verarbeiten.
+
+%description -l fr
+Le programme units convertit des quantités exprimées en différents
+systèmes en leur équivalents sous d'autres systèmes. Il ne peut gérer
+que les changements multiplicatifs de systèmes.
+
+%description -l tr
+units programý, çeþitli birimlerdeki büyüklükleri baþka birimlere
+çevirir.
+
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
 
 %build
 LDFLAGS="-s"; export LDFLAGS
@@ -32,12 +53,8 @@ autoconf
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir},%{_mandir}/man1,%{_infodir}}
 
-install units $RPM_BUILD_ROOT%{_bindir}
-install units.dat $RPM_BUILD_ROOT%{_datadir}
-install units.1 $RPM_BUILD_ROOT%{_mandir}/man1
-install units.info $RPM_BUILD_ROOT%{_infodir}
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
 gzip -9nf $RPM_BUILD_ROOT{%{_mandir}/man1/*,%{_infodir}/*} \
 	NEWS README
@@ -47,8 +64,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc *.gz
 %attr(755,root,root) %{_bindir}/units
 %{_datadir}/units.dat
-%{_mandir}/man1/*.gz
-%{_infodir}/*.gz
-%doc *.gz
+%{_mandir}/man1/*
+%{_infodir}/*info*
