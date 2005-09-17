@@ -9,7 +9,7 @@ Summary(tr):	Birim dЖnЭЧtЭrme programЩ
 Summary(uk):	Утил╕та для конвертац╕╖ одиниць вим╕ру
 Name:		units
 Version:	1.80
-Release:	6
+Release:	7
 License:	GPL
 Group:		Applications/Engineering
 Source0:	ftp://ftp.gnu.org/pub/gnu/units/%{name}-%{version}.tar.gz
