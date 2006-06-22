@@ -1,13 +1,11 @@
---- units-1.80/Makefile.in~	Tue Apr 29 11:24:25 2003
-+++ units-1.80/Makefile.in	Tue Apr 29 11:24:25 2003
-@@ -91,8 +91,8 @@
- OBJECTS = units$o
- $(OBJECTS): $(ANSI2KNR)
+--- units-1.85/Makefile.in.orig	2006-06-22 09:04:08.000000000 +0200
++++ units-1.85/Makefile.in	2006-06-22 09:15:30.000000000 +0200
+@@ -45,7 +45,7 @@
+ datadir = @datadir@
+ DEFS = -DUNITSFILE=\"$(datadir)/misc/units.dat\" @DEFIS@ @DEFS@
+ CFLAGS = @CFLAGS@
+-OBJECTS = units.@OBJEXT@ parse.tab.@OBJEXT@ getopt.@OBJEXT@ getopt1.@OBJEXT@ @STRFUNC@
++OBJECTS = units.@OBJEXT@ parse.tab.@OBJEXT@ @STRFUNC@
  
--units: $(OBJECTS) parse.tab.o getopt.o getopt1.o @STRFUNC@
--	$(CC) $(LDFLAGS) -o units $(OBJECTS) parse.tab.o getopt.o getopt1.o @STRFUNC@ $(LIBS)
-+units: $(OBJECTS) parse.tab.o @STRFUNC@
-+	$(CC) $(LDFLAGS) -o units $(OBJECTS) parse.tab.o @STRFUNC@ $(LIBS)
- 
- install: units units.dat install-doc
- 	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(datadir)
+ .SUFFIXES:
+ .SUFFIXES: .c .@OBJEXT@

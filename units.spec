@@ -8,17 +8,16 @@ Summary(ru):	õÔÉÌÉÔÁ ÐÒÅÏÂÒÁÚÏ×ÁÎÉÑ ÅÄÉÎÉÃ ÉÚÍÅÒÅÎÉÑ
 Summary(tr):	Birim dönüþtürme programý
 Summary(uk):	õÔÉÌ¦ÔÁ ÄÌÑ ËÏÎ×ÅÒÔÁÃ¦§ ÏÄÉÎÉÃØ ×ÉÍ¦ÒÕ
 Name:		units
-Version:	1.80
+Version:	1.85
 Release:	7
 License:	GPL
 Group:		Applications/Engineering
 Source0:	ftp://ftp.gnu.org/pub/gnu/units/%{name}-%{version}.tar.gz
-# Source0-md5:	537f0e1fadc7715e1eb15c9aa33c8c64
+# Source0-md5:	e2856ebf1082a8ed4f83d791e5a0b90b
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-DESTDIR.patch
 Patch2:		%{name}-FHS.patch
 Patch3:		%{name}-use_sys_getopt.patch
-Patch4:		%{name}-comment_strange_c_code.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	readline-devel >= 4.2
@@ -97,7 +96,6 @@ units programý, çeþitli birimlerdeki büyüklükleri baþka birimlere
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
-%patch4 -p0
 
 %build
 %{__aclocal}
