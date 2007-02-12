@@ -1,12 +1,12 @@
 Summary:	A utility for converting amounts from one unit to another
-Summary(de.UTF-8):   Einheitenkonvertierungsprogramm
-Summary(es.UTF-8):   Programas de conversión de unidades
-Summary(fr.UTF-8):   Programme de conversion d'unités
-Summary(pl.UTF-8):   Narzędzie do konwersji wartości między jednostkami
-Summary(pt_BR.UTF-8):   Programas de conversão de unidades
-Summary(ru.UTF-8):   Утилита преобразования единиц измерения
-Summary(tr.UTF-8):   Birim dönüştürme programı
-Summary(uk.UTF-8):   Утиліта для конвертації одиниць виміру
+Summary(de.UTF-8):	Einheitenkonvertierungsprogramm
+Summary(es.UTF-8):	Programas de conversión de unidades
+Summary(fr.UTF-8):	Programme de conversion d'unités
+Summary(pl.UTF-8):	Narzędzie do konwersji wartości między jednostkami
+Summary(pt_BR.UTF-8):	Programas de conversão de unidades
+Summary(ru.UTF-8):	Утилита преобразования единиц измерения
+Summary(tr.UTF-8):	Birim dönüştürme programı
+Summary(uk.UTF-8):	Утиліта для конвертації одиниць виміру
 Name:		units
 Version:	1.85
 Release:	1
