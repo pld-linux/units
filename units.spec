@@ -1,12 +1,12 @@
 Summary:	A utility for converting amounts from one unit to another
-Summary(de):	Einheitenkonvertierungsprogramm
-Summary(es):	Programas de conversiСn de unidades
-Summary(fr):	Programme de conversion d'unitИs
-Summary(pl):	NarzЙdzie do konwersji warto╤ci miЙdzy jednostkami
-Summary(pt_BR):	Programas de conversЦo de unidades
-Summary(ru):	Утилита преобразования единиц измерения
-Summary(tr):	Birim dЖnЭЧtЭrme programЩ
-Summary(uk):	Утил╕та для конвертац╕╖ одиниць вим╕ру
+Summary(de.UTF-8):   Einheitenkonvertierungsprogramm
+Summary(es.UTF-8):   Programas de conversiцЁn de unidades
+Summary(fr.UTF-8):   Programme de conversion d'unitц╘s
+Summary(pl.UTF-8):   Narzд≥dzie do konwersji wartoе⌡ci miд≥dzy jednostkami
+Summary(pt_BR.UTF-8):   Programas de conversцёo de unidades
+Summary(ru.UTF-8):   пёя┌п╦п╩п╦я┌п╟ п©я─п╣п╬п╠я─п╟п╥п╬п╡п╟п╫п╦я▐ п╣п╢п╦п╫п╦я├ п╦п╥п╪п╣я─п╣п╫п╦я▐
+Summary(tr.UTF-8):   Birim dц╤nц╪е÷tц╪rme programд╠
+Summary(uk.UTF-8):   пёя┌п╦п╩я√я┌п╟ п╢п╩я▐ п╨п╬п╫п╡п╣я─я┌п╟я├я√я≈ п╬п╢п╦п╫п╦я├я▄ п╡п╦п╪я√я─я┐
 Name:		units
 Version:	1.85
 Release:	1
@@ -36,59 +36,59 @@ Units is a handy little program which contains a large number of
 conversions, from au's to parsecs and tablespoons to cups. You
 probably don't need to install it, but it comes in handy sometimes.
 
-%description -l de
-Das Programm 'units' konvertiert MengenausdrЭcke in verschiedenen
-MaъstДben in die entsprechenden Werte des anderen Maъstabs um. Das
-Programm kann nur multiplikative MaъstabsДnderungen verarbeiten.
+%description -l de.UTF-8
+Das Programm 'units' konvertiert Mengenausdrц╪cke in verschiedenen
+Maц÷stц╓ben in die entsprechenden Werte des anderen Maц÷stabs um. Das
+Programm kann nur multiplikative Maц÷stabsц╓nderungen verarbeiten.
 
-%description -l es
+%description -l es.UTF-8
 El programa units convierte expresiones de cantidad en varias escalas
 para sus equivalentes en otras escalas. Solamente puede manipular
 cambios multiplicativos de escala.
 
-%description -l fr
-Le programme units convertit des quantitИs exprimИes en diffИrents
-systХmes en leur Иquivalents sous d'autres systХmes. Il ne peut gИrer
-que les changements multiplicatifs de systХmes.
+%description -l fr.UTF-8
+Le programme units convertit des quantitц╘s exprimц╘es en diffц╘rents
+systц╗mes en leur ц╘quivalents sous d'autres systц╗mes. Il ne peut gц╘rer
+que les changements multiplicatifs de systц╗mes.
 
-%description -l pl
-Program units przelicza warto╤ci z jednej jednostki na inn╠, albo mСwi
-jakie operacje matematyczne trzeba przeprowadziФ, aby przeliczyФ
-miЙdzy jednostkami. NarzЙdzie to mo©e obsЁu©yФ tylko konwersje
-multiplikatywne (tzn. nie mo©e powiedzieФ jak przeliczyФ ze stopni
-Celsjusza na Fahrenheita, co wymaga dodawania oprСcz mno©enia).
+%description -l pl.UTF-8
+Program units przelicza wartoе⌡ci z jednej jednostki na innд┘, albo mцЁwi
+jakie operacje matematyczne trzeba przeprowadziд┤, aby przeliczyд┤
+miд≥dzy jednostkami. Narzд≥dzie to moе╪e obsе┌uе╪yд┤ tylko konwersje
+multiplikatywne (tzn. nie moе╪e powiedzieд┤ jak przeliczyд┤ ze stopni
+Celsjusza na Fahrenheita, co wymaga dodawania oprцЁcz mnoе╪enia).
 
-%description -l pt_BR
-O programa units converte expressУes de quantidade em vАrias escalas
+%description -l pt_BR.UTF-8
+O programa units converte expressц╣es de quantidade em vц║rias escalas
 para seus equivalentes em outras escalas. Ele somente pode manipular
-mudanГas multiplicativas de escala.
+mudanц╖as multiplicativas de escala.
 
-%description -l ru
-Программа units преобразовывает количественные выражения между
-различными системами мер или рассказывает какие математические
-операции необходимы для такого преобразования. Эта программа может
-обрабатывать только мультипликативные изменения мер (например, она не
-может рассказать как конвертировать градусы Цельсия в градусы
-Фаренгейта, так как эта конвертация требует суммирования дополнительно
-к мультипликативному преобразованию).
+%description -l ru.UTF-8
+п÷я─п╬пЁя─п╟п╪п╪п╟ units п©я─п╣п╬п╠я─п╟п╥п╬п╡я▀п╡п╟п╣я┌ п╨п╬п╩п╦я┤п╣я│я┌п╡п╣п╫п╫я▀п╣ п╡я▀я─п╟п╤п╣п╫п╦я▐ п╪п╣п╤п╢я┐
+я─п╟п╥п╩п╦я┤п╫я▀п╪п╦ я│п╦я│я┌п╣п╪п╟п╪п╦ п╪п╣я─ п╦п╩п╦ я─п╟я│я│п╨п╟п╥я▀п╡п╟п╣я┌ п╨п╟п╨п╦п╣ п╪п╟я┌п╣п╪п╟я┌п╦я┤п╣я│п╨п╦п╣
+п╬п©п╣я─п╟я├п╦п╦ п╫п╣п╬п╠я┘п╬п╢п╦п╪я▀ п╢п╩я▐ я┌п╟п╨п╬пЁп╬ п©я─п╣п╬п╠я─п╟п╥п╬п╡п╟п╫п╦я▐. п╜я┌п╟ п©я─п╬пЁя─п╟п╪п╪п╟ п╪п╬п╤п╣я┌
+п╬п╠я─п╟п╠п╟я┌я▀п╡п╟я┌я▄ я┌п╬п╩я▄п╨п╬ п╪я┐п╩я▄я┌п╦п©п╩п╦п╨п╟я┌п╦п╡п╫я▀п╣ п╦п╥п╪п╣п╫п╣п╫п╦я▐ п╪п╣я─ (п╫п╟п©я─п╦п╪п╣я─, п╬п╫п╟ п╫п╣
+п╪п╬п╤п╣я┌ я─п╟я│я│п╨п╟п╥п╟я┌я▄ п╨п╟п╨ п╨п╬п╫п╡п╣я─я┌п╦я─п╬п╡п╟я┌я▄ пЁя─п╟п╢я┐я│я▀ п╕п╣п╩я▄я│п╦я▐ п╡ пЁя─п╟п╢я┐я│я▀
+п╓п╟я─п╣п╫пЁп╣п╧я┌п╟, я┌п╟п╨ п╨п╟п╨ я█я┌п╟ п╨п╬п╫п╡п╣я─я┌п╟я├п╦я▐ я┌я─п╣п╠я┐п╣я┌ я│я┐п╪п╪п╦я─п╬п╡п╟п╫п╦я▐ п╢п╬п©п╬п╩п╫п╦я┌п╣п╩я▄п╫п╬
+п╨ п╪я┐п╩я▄я┌п╦п©п╩п╦п╨п╟я┌п╦п╡п╫п╬п╪я┐ п©я─п╣п╬п╠я─п╟п╥п╬п╡п╟п╫п╦я▌).
 
-Чаще всего нет необходимости устанавливать эту программу, но иногда
-она может оказаться полезной.
+п╖п╟я┴п╣ п╡я│п╣пЁп╬ п╫п╣я┌ п╫п╣п╬п╠я┘п╬п╢п╦п╪п╬я│я┌п╦ я┐я│я┌п╟п╫п╟п╡п╩п╦п╡п╟я┌я▄ я█я┌я┐ п©я─п╬пЁя─п╟п╪п╪я┐, п╫п╬ п╦п╫п╬пЁп╢п╟
+п╬п╫п╟ п╪п╬п╤п╣я┌ п╬п╨п╟п╥п╟я┌я▄я│я▐ п©п╬п╩п╣п╥п╫п╬п╧.
 
-%description -l tr
-units programЩ, ГeЧitli birimlerdeki bЭyЭklЭkleri baЧka birimlere
-Гevirir.
+%description -l tr.UTF-8
+units programд╠, ц╖eе÷itli birimlerdeki bц╪yц╪klц╪kleri baе÷ka birimlere
+ц╖evirir.
 
-%description -l uk
-Програма units перетворю╓ к╕льк╕сн╕ вирази м╕ж р╕зними системами м╕р
-або розпов╕да╓ як╕ математичн╕ операц╕╖ потр╕бн╕ для такого
-перетворення. Ця програма може обробляти лише мультипл╕кативн╕ зм╕ни
-м╕р (наприклад, вона не може розпов╕сти як конвертувати градуси
-Цельс╕я в градуси Фаренгейта, бо ця конвертац╕я потребу╓ додавання
-додатково до мультипл╕кативного перетворення).
+%description -l uk.UTF-8
+п÷я─п╬пЁя─п╟п╪п╟ units п©п╣я─п╣я┌п╡п╬я─я▌я■ п╨я√п╩я▄п╨я√я│п╫я√ п╡п╦я─п╟п╥п╦ п╪я√п╤ я─я√п╥п╫п╦п╪п╦ я│п╦я│я┌п╣п╪п╟п╪п╦ п╪я√я─
+п╟п╠п╬ я─п╬п╥п©п╬п╡я√п╢п╟я■ я▐п╨я√ п╪п╟я┌п╣п╪п╟я┌п╦я┤п╫я√ п╬п©п╣я─п╟я├я√я≈ п©п╬я┌я─я√п╠п╫я√ п╢п╩я▐ я┌п╟п╨п╬пЁп╬
+п©п╣я─п╣я┌п╡п╬я─п╣п╫п╫я▐. п╕я▐ п©я─п╬пЁя─п╟п╪п╟ п╪п╬п╤п╣ п╬п╠я─п╬п╠п╩я▐я┌п╦ п╩п╦я┬п╣ п╪я┐п╩я▄я┌п╦п©п╩я√п╨п╟я┌п╦п╡п╫я√ п╥п╪я√п╫п╦
+п╪я√я─ (п╫п╟п©я─п╦п╨п╩п╟п╢, п╡п╬п╫п╟ п╫п╣ п╪п╬п╤п╣ я─п╬п╥п©п╬п╡я√я│я┌п╦ я▐п╨ п╨п╬п╫п╡п╣я─я┌я┐п╡п╟я┌п╦ пЁя─п╟п╢я┐я│п╦
+п╕п╣п╩я▄я│я√я▐ п╡ пЁя─п╟п╢я┐я│п╦ п╓п╟я─п╣п╫пЁп╣п╧я┌п╟, п╠п╬ я├я▐ п╨п╬п╫п╡п╣я─я┌п╟я├я√я▐ п©п╬я┌я─п╣п╠я┐я■ п╢п╬п╢п╟п╡п╟п╫п╫я▐
+п╢п╬п╢п╟я┌п╨п╬п╡п╬ п╢п╬ п╪я┐п╩я▄я┌п╦п©п╩я√п╨п╟я┌п╦п╡п╫п╬пЁп╬ п©п╣я─п╣я┌п╡п╬я─п╣п╫п╫я▐).
 
-Як правило необх╕дност╕ встановлювати цю програму нема╓, але ╕нод╕
-вона ста╓ на пригод╕.
+п╞п╨ п©я─п╟п╡п╦п╩п╬ п╫п╣п╬п╠я┘я√п╢п╫п╬я│я┌я√ п╡я│я┌п╟п╫п╬п╡п╩я▌п╡п╟я┌п╦ я├я▌ п©я─п╬пЁя─п╟п╪я┐ п╫п╣п╪п╟я■, п╟п╩п╣ я√п╫п╬п╢я√
+п╡п╬п╫п╟ я│я┌п╟я■ п╫п╟ п©я─п╦пЁп╬п╢я√.
 
 %prep
 %setup -q
