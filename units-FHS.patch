@@ -1,16 +1,17 @@
---- units-1.80/Makefile.in~	Tue Apr 29 11:48:16 2003
-+++ units-1.80/Makefile.in	Tue Apr 29 11:48:53 2003
-@@ -45,7 +45,7 @@
+diff -burNp units-1.87/Makefile.in units-1.87-dud/Makefile.in
+--- units-1.87/Makefile.in	2007-09-27 03:06:31.000000000 +0200
++++ units-1.87-dud/Makefile.in	2009-03-03 23:21:10.899833809 +0100
+@@ -44,7 +44,7 @@ mandir = @mandir@
+ 
  transform=@program_transform_name@
  
- datadir = @datadir@
 -DEFS = -DUNITSFILE=\"@UDAT@units.dat\" @DEFIS@ @DEFS@
 +DEFS = -DUNITSFILE=\"$(datadir)/misc/units.dat\" @DEFIS@ @DEFS@
  CFLAGS = @CFLAGS@
- ALL_CFLAGS = $(DEFS) $(CFLAGS) -I$(srcdir)
- COMPILE = $(CC) $(ALL_CFLAGS) $(LDFLAGS)
-@@ -95,13 +95,13 @@
- 	$(CC) $(LDFLAGS) -o units $(OBJECTS) parse.tab.o @STRFUNC@ $(LIBS)
+ OBJECTS = units.@OBJEXT@ parse.tab.@OBJEXT@ getopt.@OBJEXT@ getopt1.@OBJEXT@ @STRFUNC@
+ 
+@@ -78,13 +78,13 @@ units@EXEEXT@: $(OBJECTS)
+ 	$(CC) $(LDFLAGS) -o units $(OBJECTS) $(LIBS)
  
  install: units units.dat install-doc
 -	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(datadir)
@@ -26,20 +27,20 @@
  
  install-doc: install-man install-info
  
-@@ -113,7 +113,7 @@
+@@ -96,7 +96,7 @@ units.man: units.texinfo texi2man
  	./texi2man units.texinfo > units.man
  
  units.1: units.man
 -	sed s!@DATAFILE@!@UDAT@units.dat! $(srcdir)/units.man > units.1
 +	sed s!@DATAFILE@!$(datadir)/misc/units.dat! $(srcdir)/units.man > units.1
  
- install-info:
- 	$(srcdir)/mkinstalldirs $(DESTDIR)$(infodir)
-@@ -125,7 +125,7 @@
+ install-info: $(DESTDIR)$(infodir)/units.info
+ 
+@@ -126,7 +126,7 @@ Makefile: Makefile.in config.status
  uninstall: 
- 	-rm -f $(DESTDIR)$(DESTDIR)$(bindir)/`echo units|sed '$(transform)'` \
+ 	-rm -f $(DESTDIR)$(bindir)/`echo units|sed '$(transform)'` \
  	       $(DESTDIR)$(mandir)/man1/`echo units|sed '$(transform)'`.1 \
--	       $(DESTDIR)$(infodir)/units.info $(DESTDIR)$(DESTDIR)$(datadir)/units.dat
+-	       $(DESTDIR)$(infodir)/units.info $(DESTDIR)$(datadir)/units.dat
 +	       $(DESTDIR)$(infodir)/units.info $(DESTDIR)$(DESTDIR)$(datadir)/misc/units.dat
  	@if test -f $(DESTDIR)$(infodir)/dir; then \
  	  echo You may need to remove units.info from $(DESTDIR)$(infodir)/dir; \
