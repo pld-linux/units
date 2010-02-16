@@ -1,7 +1,6 @@
-diff -burNp units-1.87/Makefile.in units-1.87-dud/Makefile.in
---- units-1.87/Makefile.in	2007-09-27 03:06:31.000000000 +0200
-+++ units-1.87-dud/Makefile.in	2009-03-03 23:21:10.899833809 +0100
-@@ -44,7 +44,7 @@ mandir = @mandir@
+--- units-1.88/Makefile.in.orig	2008-04-22 13:07:04.000000000 +0200
++++ units-1.88/Makefile.in	2010-02-16 13:35:38.000000000 +0100
+@@ -44,7 +44,7 @@
  
  transform=@program_transform_name@
  
@@ -10,24 +9,25 @@ diff -burNp units-1.87/Makefile.in units-1.87-dud/Makefile.in
  CFLAGS = @CFLAGS@
  OBJECTS = units.@OBJEXT@ parse.tab.@OBJEXT@ getopt.@OBJEXT@ getopt1.@OBJEXT@ @STRFUNC@
  
-@@ -78,13 +78,13 @@ units@EXEEXT@: $(OBJECTS)
+@@ -78,14 +78,14 @@
  	$(CC) $(LDFLAGS) -o units $(OBJECTS) $(LIBS)
  
- install: units units.dat install-doc
+ install: units@EXEEXT@ units.dat install-doc
 -	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(datadir)
 +	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(datadir)/misc
  	$(INSTALL_PROGRAM) units $(DESTDIR)$(bindir)/`echo units|sed '$(transform)'`
 -	$(INSTALL_DATA) $(srcdir)/units.dat $(DESTDIR)$(datadir)/units.dat
 +	$(INSTALL_DATA) $(srcdir)/units.dat $(DESTDIR)$(datadir)/misc/units.dat
  
- install-strip: units units.dat install-doc
+ install-strip: units@EXEEXT@ units.dat install-doc
+ 	$(srcdir)/mkinstalldirs $(DESTDIR)$(bindir) $(DESTDIR)$(datadir)
  	$(INSTALL_PROGRAM) -s units $(DESTDIR)$(bindir)/`echo units|sed '$(transform)'`
 -	$(INSTALL_DATA) $(srcdir)/units.dat $(DESTDIR)$(datadir)/units.dat
 +	$(INSTALL_DATA) $(srcdir)/units.dat $(DESTDIR)$(datadir)/misc/units.dat
  
  install-doc: install-man install-info
  
-@@ -96,7 +96,7 @@ units.man: units.texinfo texi2man
+@@ -97,7 +97,7 @@
  	./texi2man units.texinfo > units.man
  
  units.1: units.man
@@ -36,7 +36,7 @@ diff -burNp units-1.87/Makefile.in units-1.87-dud/Makefile.in
  
  install-info: $(DESTDIR)$(infodir)/units.info
  
-@@ -126,7 +126,7 @@ Makefile: Makefile.in config.status
+@@ -127,7 +127,7 @@
  uninstall: 
  	-rm -f $(DESTDIR)$(bindir)/`echo units|sed '$(transform)'` \
  	       $(DESTDIR)$(mandir)/man1/`echo units|sed '$(transform)'`.1 \
