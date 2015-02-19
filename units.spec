@@ -1,5 +1,5 @@
 # TODO:
-#	- create subpackage for units_cur 
+#	- create subpackage for units_cur
 #	-- units_cur updates currency information
 #	-- it requires python and unidecode module
 #	-- create its daily.cronjob
@@ -20,7 +20,7 @@ Version:	2.11
 Release:	1
 License:	GPL
 Group:		Applications/Engineering
-Source0:	ftp://ftp.gnu.org/pub/gnu/units/%{name}-%{version}.tar.gz
+Source0:	http://ftp.gnu.org/gnu/units/%{name}-%{version}.tar.gz
 # Source0-md5:	1d83f4e68135495aa9267b848de78dc5
 Patch0:		%{name}-use_sys_getopt.patch
 BuildRequires:	autoconf
