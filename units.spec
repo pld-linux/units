@@ -121,6 +121,10 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS README
 %attr(755,root,root) %{_bindir}/%{name}
-%{_datadir}/misc/%{name}.dat
+%attr(755,root,root) %{_bindir}/units_cur
+%dir %{_datadir}/%{name}
+%{_datadir}/%{name}/currency.units
+%{_datadir}/%{name}/definitions.units
+%{_datadir}/%{name}/locale_map.txt
 %{_mandir}/man1/*
 %{_infodir}/*info*
