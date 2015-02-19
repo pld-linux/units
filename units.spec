@@ -5,6 +5,8 @@
 #	-- create its daily.cronjob
 #	-- don't verify currency data by rpm
 #	-- maybe update currency data in postinstall
+#	-- in install section it tries to download fresh currency data
+#	-- units_cur BR: python
 #
 Summary:	A utility for converting amounts from one unit to another
 Summary(de.UTF-8):	Einheitenkonvertierungsprogramm
