@@ -8,12 +8,12 @@ Summary(ru.UTF-8):	Утилита преобразования единиц из
 Summary(tr.UTF-8):	Birim dönüştürme programı
 Summary(uk.UTF-8):	Утиліта для конвертації одиниць виміру
 Name:		units
-Version:	1.88
-Release:	1
+Version:	2.11
+Release:	0.1
 License:	GPL
 Group:		Applications/Engineering
 Source0:	ftp://ftp.gnu.org/pub/gnu/units/%{name}-%{version}.tar.gz
-# Source0-md5:	9b2ee6e7e0e9c62741944cf33fc8a656
+# Source0-md5:	1d83f4e68135495aa9267b848de78dc5
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-FHS.patch
 Patch2:		%{name}-use_sys_getopt.patch
