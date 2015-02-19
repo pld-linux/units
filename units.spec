@@ -1,3 +1,11 @@
+# TODO:
+#	- create subpackage for units_cur 
+#	-- units_cur updates currency information
+#	-- it requires python and unidecode module
+#	-- create its daily.cronjob
+#	-- don't verify currency data by rpm
+#	-- maybe update currency data in postinstall
+#
 Summary:	A utility for converting amounts from one unit to another
 Summary(de.UTF-8):	Einheitenkonvertierungsprogramm
 Summary(es.UTF-8):	Programas de conversión de unidades
