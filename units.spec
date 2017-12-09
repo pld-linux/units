@@ -18,17 +18,22 @@ Summary(ru.UTF-8):	Утилита преобразования единиц из
 Summary(tr.UTF-8):	Birim dönüştürme programı
 Summary(uk.UTF-8):	Утиліта для конвертації одиниць виміру
 Name:		units
-Version:	2.13
+Version:	2.16
 Release:	1
-License:	GPL
+License:	GPL v3+
 Group:		Applications/Engineering
 Source0:	http://ftp.gnu.org/gnu/units/%{name}-%{version}.tar.gz
-# Source0-md5:	5cbf2a6af76e94ba0ac55fc8d99d5a3e
+# Source0-md5:	d2491018846f5ce33b953d49fcc8b725
 Patch0:		%{name}-use_sys_getopt.patch
-BuildRequires:	autoconf
+URL:		http://www.gnu.org/software/units/
+BuildRequires:	autoconf >= 2.64
 BuildRequires:	automake
+BuildRequires:	python >= 2
 BuildRequires:	readline-devel >= 4.2
 BuildRequires:	texinfo
+# for units_cur
+Requires:	python >= 1:2.6
+Suggests:	python-requests
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -116,20 +121,20 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p	/sbin/postshell
+%post	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-p	/sbin/postshell
+%postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files
 %defattr(644,root,root,755)
 %doc NEWS README
-%attr(755,root,root) %{_bindir}/%{name}
+%attr(755,root,root) %{_bindir}/units
 %attr(755,root,root) %{_bindir}/units_cur
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/currency.units
 %{_datadir}/%{name}/definitions.units
 %{_datadir}/%{name}/locale_map.txt
-%{_mandir}/man1/*
-%{_infodir}/*info*
+%{_mandir}/man1/units.1*
+%{_infodir}/units.info*
