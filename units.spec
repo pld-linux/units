@@ -18,12 +18,12 @@ Summary(ru.UTF-8):	Утилита преобразования единиц из
 Summary(tr.UTF-8):	Birim dönüştürme programı
 Summary(uk.UTF-8):	Утиліта для конвертації одиниць виміру
 Name:		units
-Version:	2.16
+Version:	2.17
 Release:	1
 License:	GPL v3+
 Group:		Applications/Engineering
 Source0:	http://ftp.gnu.org/gnu/units/%{name}-%{version}.tar.gz
-# Source0-md5:	d2491018846f5ce33b953d49fcc8b725
+# Source0-md5:	5809e8d4bcc4e622f6f531078e6958af
 Patch0:		%{name}-use_sys_getopt.patch
 URL:		http://www.gnu.org/software/units/
 BuildRequires:	autoconf >= 2.64
@@ -115,7 +115,7 @@ units programı, çeşitli birimlerdeki büyüklükleri başka birimlere
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} -j1 install \
+%{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
@@ -136,5 +136,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/currency.units
 %{_datadir}/%{name}/definitions.units
 %{_datadir}/%{name}/locale_map.txt
+%dir %{_sharedstatedir}/%{name}/currency.units
 %{_mandir}/man1/units.1*
 %{_infodir}/units.info*
