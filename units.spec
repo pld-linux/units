@@ -19,7 +19,7 @@ Summary(tr.UTF-8):	Birim dönüştürme programı
 Summary(uk.UTF-8):	Утиліта для конвертації одиниць виміру
 Name:		units
 Version:	2.17
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Applications/Engineering
 Source0:	http://ftp.gnu.org/gnu/units/%{name}-%{version}.tar.gz
@@ -136,6 +136,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}/currency.units
 %{_datadir}/%{name}/definitions.units
 %{_datadir}/%{name}/locale_map.txt
-%dir %{_sharedstatedir}/%{name}/currency.units
+%dir %{_sharedstatedir}/%{name}
+%{_sharedstatedir}/%{name}/currency.units
 %{_mandir}/man1/units.1*
 %{_infodir}/units.info*
