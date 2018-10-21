@@ -1,11 +1,11 @@
 --- units-1.85/Makefile.in.orig	2006-06-22 09:04:08.000000000 +0200
 +++ units-1.85/Makefile.in	2006-06-22 09:15:30.000000000 +0200
 @@ -45,7 +45,7 @@
- datadir = @datadir@
- DEFS = -DUNITSFILE=\"$(datadir)/misc/units.dat\" @DEFIS@ @DEFS@
+                     @DEFIS@ @DEFS@
  CFLAGS = @CFLAGS@
+ CPPFLAGS = @CPPFLAGS@
 -OBJECTS = units.@OBJEXT@ parse.tab.@OBJEXT@ getopt.@OBJEXT@ getopt1.@OBJEXT@ @STRFUNC@
 +OBJECTS = units.@OBJEXT@ parse.tab.@OBJEXT@ @STRFUNC@
  
- .SUFFIXES:
- .SUFFIXES: .c .@OBJEXT@
+ .PHONY: currency-units-update
+ 
