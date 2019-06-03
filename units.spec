@@ -18,12 +18,12 @@ Summary(ru.UTF-8):	Утилита преобразования единиц из
 Summary(tr.UTF-8):	Birim dönüştürme programı
 Summary(uk.UTF-8):	Утиліта для конвертації одиниць виміру
 Name:		units
-Version:	2.18
+Version:	2.19
 Release:	1
 License:	GPL v3+
 Group:		Applications/Engineering
 Source0:	http://ftp.gnu.org/gnu/units/%{name}-%{version}.tar.gz
-# Source0-md5:	402395abfc0cc3bba6a76ee4c118bc72
+# Source0-md5:	f38468b31a55baa926b449dfdaacc8aa
 Patch0:		%{name}-use_sys_getopt.patch
 URL:		http://www.gnu.org/software/units/
 BuildRequires:	autoconf >= 2.64
