@@ -19,7 +19,7 @@ Summary(tr.UTF-8):	Birim dönüştürme programı
 Summary(uk.UTF-8):	Утиліта для конвертації одиниць виміру
 Name:		units
 Version:	2.19
-Release:	1
+Release:	2
 License:	GPL v3+
 Group:		Applications/Engineering
 Source0:	http://ftp.gnu.org/gnu/units/%{name}-%{version}.tar.gz
