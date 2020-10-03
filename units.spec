@@ -18,22 +18,22 @@ Summary(ru.UTF-8):	Утилита преобразования единиц из
 Summary(tr.UTF-8):	Birim dönüştürme programı
 Summary(uk.UTF-8):	Утиліта для конвертації одиниць виміру
 Name:		units
-Version:	2.19
-Release:	2
+Version:	2.20
+Release:	1
 License:	GPL v3+
 Group:		Applications/Engineering
 Source0:	http://ftp.gnu.org/gnu/units/%{name}-%{version}.tar.gz
-# Source0-md5:	f38468b31a55baa926b449dfdaacc8aa
+# Source0-md5:	28e2ba6fd2dbf056b7559e03c31577d5
 Patch0:		%{name}-use_sys_getopt.patch
 URL:		http://www.gnu.org/software/units/
 BuildRequires:	autoconf >= 2.64
 BuildRequires:	automake
-BuildRequires:	python >= 2
+BuildRequires:	python3 >= 1:3.2
 BuildRequires:	readline-devel >= 4.2
 BuildRequires:	texinfo
 # for units_cur
-Requires:	python >= 1:2.6
-Suggests:	python-requests
+Requires:	python3 >= 1:3.2
+Suggests:	python3-requests
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -109,7 +109,8 @@ units programı, çeşitli birimlerdeki büyüklükleri başka birimlere
 %build
 %{__aclocal}
 %{__autoconf}
-%configure
+%configure \
+	PYTHON="%{__python3}"
 %{__make}
 
 %install
