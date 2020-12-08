@@ -1,0 +1,14 @@
+--- units-2.21/units.texinfo.orig	2020-11-15 20:07:27.000000000 +0100
++++ units-2.21/units.texinfo	2020-12-08 20:53:02.841436332 +0100
+@@ -38,9 +38,9 @@
+ @syncodeindex op cp
+ 
+ @c noman
+-@dircategory Science
++@dircategory Miscellaneous:
+ @direntry
+-* Units: (units).               Units conversion and scientific calculation.
++* Units: (units).			Units conversion and scientific calculation
+ @end direntry
+ 
+ @c end noman

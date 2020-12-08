@@ -18,13 +18,14 @@ Summary(ru.UTF-8):	Утилита преобразования единиц из
 Summary(tr.UTF-8):	Birim dönüştürme programı
 Summary(uk.UTF-8):	Утиліта для конвертації одиниць виміру
 Name:		units
-Version:	2.20
+Version:	2.21
 Release:	1
 License:	GPL v3+
 Group:		Applications/Engineering
-Source0:	http://ftp.gnu.org/gnu/units/%{name}-%{version}.tar.gz
-# Source0-md5:	28e2ba6fd2dbf056b7559e03c31577d5
+Source0:	https://ftp.gnu.org/gnu/units/%{name}-%{version}.tar.gz
+# Source0-md5:	8fc4884bf5f7dab10b5a31bdf7726c2d
 Patch0:		%{name}-use_sys_getopt.patch
+Patch1:		%{name}-info.patch
 URL:		http://www.gnu.org/software/units/
 BuildRequires:	autoconf >= 2.64
 BuildRequires:	automake
@@ -105,6 +106,7 @@ units programı, çeşitli birimlerdeki büyüklükleri başka birimlere
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__aclocal}
