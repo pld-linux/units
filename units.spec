@@ -18,12 +18,12 @@ Summary(ru.UTF-8):	Утилита преобразования единиц из
 Summary(tr.UTF-8):	Birim dönüştürme programı
 Summary(uk.UTF-8):	Утиліта для конвертації одиниць виміру
 Name:		units
-Version:	2.21
+Version:	2.23
 Release:	1
 License:	GPL v3+
 Group:		Applications/Engineering
 Source0:	https://ftp.gnu.org/gnu/units/%{name}-%{version}.tar.gz
-# Source0-md5:	8fc4884bf5f7dab10b5a31bdf7726c2d
+# Source0-md5:	2cb4f754dcde5b2409e656f5d8d4a474
 Patch0:		%{name}-use_sys_getopt.patch
 Patch1:		%{name}-info.patch
 URL:		http://www.gnu.org/software/units/
@@ -136,10 +136,13 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/units
 %attr(755,root,root) %{_bindir}/units_cur
 %dir %{_datadir}/%{name}
+%{_datadir}/%{name}/cpi.units
 %{_datadir}/%{name}/currency.units
 %{_datadir}/%{name}/definitions.units
+%{_datadir}/%{name}/elements.units
 %{_datadir}/%{name}/locale_map.txt
 %dir %{_sharedstatedir}/%{name}
 %{_sharedstatedir}/%{name}/currency.units
+%{_sharedstatedir}/%{name}/cpi.units
 %{_mandir}/man1/units.1*
 %{_infodir}/units.info*

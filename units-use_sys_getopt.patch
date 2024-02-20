@@ -1,11 +1,11 @@
---- units-1.85/Makefile.in.orig	2006-06-22 09:04:08.000000000 +0200
-+++ units-1.85/Makefile.in	2006-06-22 09:15:30.000000000 +0200
-@@ -45,7 +45,7 @@
+--- units-2.23/Makefile.in.orig	2024-02-20 17:37:13.894755652 +0100
++++ units-2.23/Makefile.in	2024-02-20 17:37:49.274563983 +0100
+@@ -59,7 +59,7 @@ DEFS=-DUNITSFILE=\"@UDATADIR@definitions
                      @DEFIS@ @DEFS@
  CFLAGS = @CFLAGS@
  CPPFLAGS = @CPPFLAGS@
 -OBJECTS = units.@OBJEXT@ parse.tab.@OBJEXT@ getopt.@OBJEXT@ getopt1.@OBJEXT@ @STRFUNC@
 +OBJECTS = units.@OBJEXT@ parse.tab.@OBJEXT@ @STRFUNC@
  
- .PHONY: currency-units-update
+ .PHONY: currency-update-check
  
